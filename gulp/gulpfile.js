@@ -4,7 +4,7 @@ const autoprefexer = require('gulp-autoprefixer')
 const cleanCSS = require('gulp-clean-css')
 const uglify = require('gulp-uglify')
 const del = require('del')
-const browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync').create()
 
 const files = {
     cssPath: './src/css/**.*css',
@@ -25,7 +25,6 @@ function styles() {
 function scripts() {
     return  gulp.src(files.jsPath)
     .pipe(concat('script.js'))
-    .pipe(uglify())
     .pipe(gulp.dest('./build/js/'))
     .pipe(browserSync.stream())
 }
